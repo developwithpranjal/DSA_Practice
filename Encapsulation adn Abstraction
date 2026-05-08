@@ -1,0 +1,33 @@
+// Ques:Encapsulation and abstraction:
+
+#include<iostream>
+using namespace std;
+
+
+class Student{
+    private:
+    
+    string name;
+    int age;
+    int roll_no;
+    
+    public:
+    void setter(string n,int a,int r){
+        name=n;
+        age=a;
+        roll_no=r;
+
+    }
+    int getter(){
+        return age;
+    }
+
+};
+int main(){
+    Student obj;
+    obj.setter("Pranjal",21,777);
+    cout<<obj.getter();
+    return 0;
+
+};
+----------------------********************************************************************************************----------------------------------------------------------
