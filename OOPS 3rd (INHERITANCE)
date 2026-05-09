@@ -1,0 +1,181 @@
+// Single Inheritance:
+
+#include <iostream>
+using namespace std;
+
+class Human
+{
+protected:
+    string name;
+};
+class Student : public Human
+ {
+    int roll_no;
+    public:
+    Student(string n,int a){
+        name=n;
+        roll_no=a;
+    }
+    void display(){
+        cout<<name<<" "<<roll_no<<endl;
+    }
+};
+int main(){
+    Student obj("Pranjal",21);
+    obj.display();
+    return 0;
+}
+**********************************************--------------------------------********************************************
+
+// MULTILEVEL INHERITANCE :
+
+#include <iostream>
+using namespace std;
+
+class Human
+{
+protected:
+    string name;
+};
+class Person : public Human
+{
+protected:
+    int age;
+};
+class Student : public Person
+{
+    int roll_no;
+
+public:
+    Student(string n, int a, int r)
+    {
+        name = n;
+        age = a;
+        roll_no = r;
+    }
+
+    void display()
+    {
+        cout << name << " " << age << " " << roll_no << endl;
+    }
+};
+
+int main()
+{
+    Student obj("Pranjal", 21, 777);
+    obj.display();
+    return 0;
+}
+
+*******************************************------------------------------------*********************************************
+
+// MULTIPLE INHERITANCE :
+
+#include <iostream>
+using namespace std;
+
+class Human
+{
+protected:
+    string name;
+};
+class Person
+{
+protected:
+    int age;
+};
+class Student : public Human,public Person
+{
+    
+    string gender;
+
+    public:
+    Student(string n, int a, string g)
+    {
+        name = n;
+        age = a;
+        gender=g;
+    }
+
+    void display()
+    {
+        cout << name << " " << age << " " << gender << endl;
+    }
+};
+
+int main()
+{
+    Student obj("Pranjal", 21, "Male");
+    obj.display();
+    return 0;
+}
+*******************************-----------------------------------------------********************************************
+
+
+// HIERARCHICAL INHERITANCE :
+
+#include<iostream>
+using namespace std;
+
+class Human
+{
+protected:
+    string name;
+    int age;
+};
+
+class Student : public Human
+{
+    int roll_no;
+
+public:
+
+    Student(string n, int a, int r)
+    {
+        name = n;
+        age = a;
+        roll_no = r;
+    }
+
+    void displayStudent()
+    {
+        cout << "Student : " << name << " "
+             << age << " "
+             << roll_no << endl;
+    }
+};
+
+class Teacher : public Human
+{
+    string subject;
+
+public:
+
+    Teacher(string n, int a, string s)
+    {
+        name = n;
+        age = a;
+        subject = s;
+    }
+
+    void displayTeacher()
+    {
+        cout << "Teacher : " << name << " "
+             << age << " "
+             << subject << endl;
+    }
+};
+
+int main()
+{
+
+    Student s("Pranjal", 21, 101);
+    s.displayStudent();
+
+    Teacher t("Rahul", 40, "Maths");
+    t.displayTeacher();
+
+    return 0;
+}
+
+
