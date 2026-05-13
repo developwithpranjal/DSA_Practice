@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+
+int addition(int n){
+    if(n == 0)
+        return 0;
+    
+    return (n % 10) + addition(n / 10);
+}
+
+int main(){
+    int num = 687;
+    cout << "Sum of digits: " << addition(num) << endl;
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
