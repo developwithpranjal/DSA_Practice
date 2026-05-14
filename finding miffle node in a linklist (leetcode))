@@ -1,0 +1,22 @@
+
+class Solution {
+public:
+    ListNode* middleNode(ListNode* head) {
+        //if linklist is empty or only have 1 node
+        if(head==NULL or head->next == NULL){
+            return head;
+        }
+        //if linklist has only 2 node
+        if(head->next->next == NULL){
+            return head->next;
+        }
+        ListNode*slow = head;
+        ListNode*fast = head;
+        while(fast!=NULL && fast->next!= NULL){
+            
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+    return slow;
+}
+};
